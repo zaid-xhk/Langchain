@@ -31,3 +31,7 @@ async def book_appointment(request: AppointmentRequest):
     return {"message": f"Appointment booked with {request.doctor} on {appointment_datetime}", 
             "appointment_id": appointment_id}
   
+#   # Add Uvicorn server to run on localhost
+# if __name__ == "__main__":
+    
+#     uvicorn.run(app, host="127.0.0.1", port=8000)

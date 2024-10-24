@@ -37,26 +37,26 @@ app = FastAPI()
 
 
 
-# while True:
-#     human_message = input("How i can help you today? ")
-#     response = index.query(human_message, llm=llm, memory=memory)
-#     print(response)
+while True:
+    human_message = input("How i can help you today? ")
+    response = index.query(human_message, llm=llm, memory=memory)
+    print(response)
 
-# Pydantic model for input validation
-class QueryRequest(BaseModel):
-    question: str
-    context: Optional[str] = None
+# # Pydantic model for input validation
+# class QueryRequest(BaseModel):
+#     question: str
+#     context: Optional[str] = None
 
-# FastAPI route to handle user queries
-@app.post("/query/")
-async def query_index(request: QueryRequest):
-    try:
-        response = index.query(request.question, llm=llm, memory=memory)
-        return {"response": response}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error querying the index: {e}")
+# # FastAPI route to handle user queries
+# @app.post("/query/")
+# async def query_index(request: QueryRequest):
+#     try:
+#         response = index.query(request.question, llm=llm, memory=memory)
+#         return {"response": response}
+#     except Exception as e:
+#         raise HTTPException(status_code=500, detail=f"Error querying the index: {e}")
 
-# Add Uvicorn server to run on localhost
-if __name__ == "__main__":
+# # Add Uvicorn server to run on localhost
+# if __name__ == "__main__":
     
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+#     uvicorn.run(app, host="127.0.0.1", port=8000)

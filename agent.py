@@ -32,11 +32,11 @@ def book_appointment(user_id: str, doctor: str, date: str, time: str) -> str:
     }
     
     try:
-        response = requests.post(url, json=data)
-        if response.status_code == 200:
-            return response.json().get("message", "Appointment booked successfully!")
-        else:
-            return f"Failed to book appointment: {response.text}"
+        # # response = requests.post(u, json=data)
+        # if response.status_code == 200:
+        #     return response.json().get("message", "Appointment booked successfully!")
+        # else:
+            return f"okkkkkkkkkkk "
     except requests.exceptions.RequestException as e:
         return f"Error: {str(e)}"
 
@@ -57,7 +57,7 @@ prompt = hub.pull("hwchase17/openai-functions-agent")
 agent = create_tool_calling_agent(llm, tools, prompt)
 
 # Create the agent executor
-agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True )
 
 # In-memory chat message history
 message_history = ChatMessageHistory()
