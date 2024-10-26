@@ -33,7 +33,7 @@ index_creator = VectorstoreIndexCreator(embedding=embedding, text_splitter=text_
 index = index_creator.from_loaders([loader])
 
 # Initialize FastAPI
-app = FastAPI()
+# app = FastAPI()   
 
 
 
